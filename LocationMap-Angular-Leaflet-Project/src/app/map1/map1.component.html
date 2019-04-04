@@ -1,0 +1,38 @@
+<div class="container">
+  <div style="text-align:center">
+    <h2>Displaying Map 1</h2>
+    <div class="col-12">
+      <div class="col-12" style="padding:5px">
+        <span class="col-6">
+          <input type="text" id="search-field" class="col-6" [(ngModel)]="searchValueMap1" name="search" placeholder="Search Address">
+        </span>
+            <button (click)="searchAddress()" class="btn btn-dark col-2" [disabled]="(!searchValueMap1||searchValueMap1.length<3)">Search</button>
+      </div>
+      <div class="col-12">
+        <span class="col-5">
+            <button (click)="locateHeadQuarters()" class="btn btn-dark">Locate WB Head Quarters</button>
+          </span>
+        <span class="col-5">
+            <button (click)= "routeToHQ()" class="btn btn-dark">Route from IAD to WB</button>
+        </span>
+      </div>
+      <div class="map1Padding">
+        <div *ngIf="displayMap1" class="map1Div" id="map1" 
+        leaflet
+        (leafletMapReady)="onMapReady($event)"
+        [leafletOptions]="map1options"
+        [leafletLayersControl]="mapLayersControl">
+        <div *ngIf="showHQLayer" [leafletLayers]="hqLayer"></div>
+        <div *ngIf="showRouteMap"
+        [leafletLayers]="routeLayers"></div>
+      </div>
+      </div>
+      <span class="col-5">
+        <button [routerLink]="['/map2']" class="btn btn-dark">Navigate to Map-2</button>
+      </span>
+      <span class="col-5"><a href="">
+        <button class="btn btn-dark">Go Back to Home Page</button>
+      </a></span>
+    </div>
+  </div>
+</div>

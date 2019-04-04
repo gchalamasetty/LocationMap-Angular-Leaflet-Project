@@ -1,0 +1,17 @@
+<div class="container">
+  <div style="text-align:center">
+    <h2>Searched Location</h2>
+    <div class="col-lg-12">
+      <div class="searchMap" *ngIf="showSearchMap">
+        <div class="searchMapDiv" id="searchMap" leaflet 
+                                                 [leafletOptions]="searchMapOptions" 
+                                                 [leafletLayersControl]="searchMapLayersControl"></div>
+      </div>
+    </div>
+    <div>
+      <a href="/map1">
+        <button class="btn btn-dark">Go Back to Search</button>
+      </a>
+    </div>
+  </div>
+</div>

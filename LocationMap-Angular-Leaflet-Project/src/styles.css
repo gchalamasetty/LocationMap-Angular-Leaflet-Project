@@ -1,0 +1,15 @@
+/* You can add global styles to this file, and also import other style files */
+
+body {
+  background-image: url("./assets/background-image.jpg");
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100%;
+}
+
+/* Overriding leaflet routing itinerary style to view map clearly */
+
+.leaflet-routing-alternatives-container {
+  display: none !important;
+}
